@@ -11,7 +11,7 @@ const bool = (value: string | undefined, fallback: boolean) =>
 export const env = {
   port: num(process.env.PORT, 5000),
   nodeEnv: process.env.NODE_ENV ?? "development",
-  clientUrl: process.env.CLIENT_URL ?? "http://localhost:3000",
+  clientUrl: (process.env.CLIENT_URL ?? "http://localhost:3000").trim().replace(/\/+$/, ""),
 
   mongoUri: process.env.MONGODB_URI ?? "mongodb://127.0.0.1:27017/collegerag",
 
