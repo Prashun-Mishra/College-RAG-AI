@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14110f;
+  --color-ink-soft: #4b4540;
+  --color-parchment: #faf8f5;
+  --color-parchment-deep: #f2eee8;
+  --color-crimson: #7b1120;
+  --color-crimson-dark: #5d0c18;
+  --color-line: #e3ddd4;
+  --font-serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+.container-editorial {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1180px;
+  padding-inline: 1.25rem;
+}
+
+.rule {
+  border-top: 1px solid var(--color-line);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: 0.375rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.6rem 1.1rem;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.btn-primary {
+  background: var(--color-crimson);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--color-crimson-dark); }
+.btn-primary:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-outline {
+  border: 1px solid var(--color-line);
+  background: #fff;
+  color: var(--color-ink);
+}
+.btn-outline:hover { background: var(--color-parchment-deep); }
+
+.field {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  border-radius: 0.25rem;
+  background: #fff;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+}
+.field:focus {
+  outline: 2px solid color-mix(in srgb, var(--color-crimson) 35%, transparent);
+  outline-offset: 1px;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #efeae3 25%, #f7f4ef 37%, #efeae3 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 0.25rem;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+/* Make all buttons show pointer cursor */
+button, [role="button"] {
+  cursor: pointer;
+}
+
+/* Chat action buttons (Copy, Regenerate, Like, Dislike) */
+.chat-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: color 150ms ease, background-color 150ms ease;
+  cursor: pointer;
+}
+.chat-action-btn:hover {
+  color: var(--color-crimson);
+  background-color: var(--color-parchment-deep);
+}
+

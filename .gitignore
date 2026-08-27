@@ -1,0 +1,12 @@
+node_modules
+dist
+.next
+out
+build
+.env
+.env.*
+!.env.example
+backend/uploads
+coverage
+.DS_Store
+*.log
