@@ -41,7 +41,7 @@ export async function embedText(text: string): Promise<number[]> {
     throw new Error(`Embedding API error (${response.status}): ${errorText}`);
   }
 
-  const data: EmbedResponse = await response.json();
+  const data = (await response.json()) as EmbedResponse;
   return data.embedding.values;
 }
 
@@ -72,7 +72,7 @@ export async function embedTexts(texts: string[], batchSize = 20): Promise<numbe
       throw new Error(`Embedding API error (${response.status}): ${errorText}`);
     }
 
-    const data: BatchEmbedResponse = await response.json();
+    const data = (await response.json()) as BatchEmbedResponse;
     vectors.push(...data.embeddings.map((e) => e.values));
   }
 
