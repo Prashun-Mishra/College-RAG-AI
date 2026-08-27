@@ -4,11 +4,10 @@ import { env } from "../config/env";
 import { asyncHandler } from "../utils/asyncHandler";
 import { ApiError } from "../utils/ApiError";
 
-const isProduction = env.nodeEnv === "production";
 const cookieOptions = {
   httpOnly: true,
-  sameSite: (isProduction ? "none" : "lax") as "none" | "lax",
-  secure: isProduction,
+  sameSite: "lax" as const,
+  secure: env.nodeEnv === "production",
   maxAge: 7 * 24 * 60 * 60 * 1000,
 };
 

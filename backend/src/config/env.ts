@@ -12,10 +12,6 @@ export const env = {
   port: num(process.env.PORT, 5000),
   nodeEnv: process.env.NODE_ENV ?? "development",
   clientUrl: process.env.CLIENT_URL ?? "http://localhost:3000",
-  clientUrls: (process.env.CLIENT_URL ?? "http://localhost:3000")
-    .split(",")
-    .map((u) => u.trim().replace(/\/$/, ""))
-    .filter(Boolean),
 
   mongoUri: process.env.MONGODB_URI ?? "mongodb://127.0.0.1:27017/collegerag",
 

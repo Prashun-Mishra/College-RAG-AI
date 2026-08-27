@@ -19,24 +19,7 @@ export function createApp() {
   const app = express();
 
   app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
-  app.use(
-    cors({
-      origin: (origin, callback) => {
-        if (!origin) return callback(null, true);
-        const clean = origin.replace(/\/$/, "");
-        if (
-          env.clientUrls.includes(clean) ||
-          env.clientUrls.includes("*") ||
-          clean.endsWith(".vercel.app") ||
-          clean.startsWith("http://localhost:")
-        ) {
-          return callback(null, true);
-        }
-        return callback(null, true); // Permissive callback to prevent blocking in cloud deployment
-      },
-      credentials: true,
-    })
-  );
+  app.use(cors({ origin: env.clientUrl, credentials: true }));
   app.use(express.json({ limit: "1mb" }));
   app.use(express.urlencoded({ extended: true }));
   app.use(cookieParser());
