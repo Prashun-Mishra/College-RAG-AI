@@ -78,16 +78,18 @@ College information is frequently scattered across disparate PDFs—academic cal
 
 ---
 
-## 6. Live Demo
-- **Frontend URL (Vercel)**: `https://college-rag-ai.vercel.app` *(Replace with your deployed Vercel domain)*
-- **Demo Credentials**: Register a new account on the live instance (the first registered account automatically becomes the administrator).
+## 6. Live Deployment & Demo
+- 🌐 **Frontend Application (Vercel)**: [https://college-rag-ai.vercel.app](https://college-rag-ai.vercel.app)
+- ⚡ **Backend API Service (Render)**: [https://college-rag-ai.onrender.com](https://college-rag-ai.onrender.com)
+- 🩺 **API Health Check**: [https://college-rag-ai.onrender.com/api/health](https://college-rag-ai.onrender.com/api/health)
+- **Account Access**: Register a new account on the live instance (the first registered user is automatically provisioned as the institutional administrator).
 
 ---
 
-## 7. Backend
-- **API Base URL**: `https://college-rag-ai-api.onrender.com` *(Replace with your deployed backend domain)*
-- **Health Check Endpoint**: `/api/health`
-- **Supported Deployment Environments**: Render, Railway, Fly.io, AWS EC2, or Docker.
+## 7. Architecture & Deployment Overview
+- **Frontend**: Deployed on **Vercel** with continuous deployment from the `main` branch.
+- **Backend API**: Deployed on **Render** (Node.js web service).
+- **Database**: Cloud MongoDB Atlas & Pinecone Serverless Vector DB.
 
 ---
 
